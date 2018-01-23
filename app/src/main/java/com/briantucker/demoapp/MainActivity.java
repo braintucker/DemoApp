@@ -10,9 +10,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickFunction(View view){
 
-        EditText textField = (EditText) findViewById(R.id.textField);
+        EditText usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+        EditText passwordEditText = (EditText) findViewById(R.id.passwordEditText);
 
-        Log.i("Name", textField.getText().toString());
+        Log.i("Name", usernameEditText.getText().toString());
+        Log.i("Password", passwordEditText.getText().toString());
+
 
     }
 
