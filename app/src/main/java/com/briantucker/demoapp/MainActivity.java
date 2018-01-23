@@ -5,16 +5,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void clickFunction(View view){
+    public void submitFunction(View view){
 
-        EditText usernameEditText = (EditText) findViewById(R.id.usernameEditText);
-        EditText passwordEditText = (EditText) findViewById(R.id.passwordEditText);
 
-        Log.i("Name", usernameEditText.getText().toString());
-        Log.i("Password", passwordEditText.getText().toString());
+        EditText nameEditText = (EditText) findViewById(R.id.nameEditText);
+
+        Toast.makeText(MainActivity.this, "Hi there, " + nameEditText.getText().toString() + "!", Toast.LENGTH_LONG).show();
+
+        Log.i("Name", nameEditText.getText().toString());
 
 
     }
