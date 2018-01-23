@@ -5,18 +5,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void submitFunction(View view){
+    public void newPic(View view){
+
+        ImageView image = (ImageView) findViewById(R.id.toolImageView);
+        image.setImageResource(R.drawable.firebase);
+
+        Log.i("Test", "Button was clicked");
 
 
-        EditText nameEditText = (EditText) findViewById(R.id.nameEditText);
-
-        Toast.makeText(MainActivity.this, "Hi there, " + nameEditText.getText().toString() + "!", Toast.LENGTH_LONG).show();
-
-        Log.i("Name", nameEditText.getText().toString());
 
 
     }
