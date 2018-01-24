@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         Double poundAmount = dollarAmountDouble * 0.7;
 
-        Toast.makeText(MainActivity.this, "£" + poundAmount.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "£" + String.format("%.2f", poundAmount), Toast.LENGTH_SHORT).show();
 
         Log.i("amount", dollarEditText.getText().toString());
     }
