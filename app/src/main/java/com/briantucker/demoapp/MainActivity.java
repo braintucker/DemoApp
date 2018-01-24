@@ -5,21 +5,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void newPic(View view){
+    public void convert(View view){
 
-        ImageView image = (ImageView) findViewById(R.id.toolImageView);
-        image.setImageResource(R.drawable.firebase);
+        EditText dollarEditText = (EditText) findViewById(R.id.dollarEditText);
 
-        Log.i("Test", "Button was clicked");
+        Double dollarAmountDouble = Double.parseDouble(dollarEditText.getText().toString());
 
+        Double poundAmount = dollarAmountDouble * 0.7;
 
+        Toast.makeText(MainActivity.this, "£" + poundAmount.toString(), Toast.LENGTH_SHORT).show();
 
-
+        Log.i("amount", dollarEditText.getText().toString());
     }
 
     @Override
