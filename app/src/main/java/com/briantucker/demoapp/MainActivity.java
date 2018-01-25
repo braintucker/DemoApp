@@ -14,10 +14,8 @@ public class MainActivity extends AppCompatActivity {
     int randomNumber;
 
     public void makeToast(String string){
-        
-
+        Toast.makeText(MainActivity.this, string, Toast.LENGTH_SHORT).show();
     }
-
     public void guess(View view) {
 
 
@@ -26,16 +24,13 @@ public class MainActivity extends AppCompatActivity {
         int guessInt = Integer.parseInt(guessNum.getText().toString());
 
         if(guessInt < randomNumber){
-            Toast.makeText(MainActivity.this, "Your number is lower!", Toast.LENGTH_SHORT).show();
-        }
+            makeToast("Your number is lower!");        }
         else if(guessInt > randomNumber){
-            Toast.makeText(MainActivity.this, "Your number is higher!", Toast.LENGTH_SHORT).show();
+            makeToast("Your number is higher!");
         }
         else {
-            Toast.makeText(MainActivity.this, "You got it! Try Again!", Toast.LENGTH_SHORT).show();
-
+            makeToast("You got it, try again!");
             Random rand = new Random();
-
             randomNumber = rand.nextInt(20) + 1;
         }
     }
