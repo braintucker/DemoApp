@@ -13,24 +13,46 @@
         tools:layout_editor_absoluteY="8dp">
 
         <EditText
-            android:id="@+id/dollarEditText"
+            android:id="@+id/guessEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp"
             android:ems="10"
             android:hint="Enter a number:"
             android:inputType="number" />
 
-        <Button
-            android:id="@+id/buttonEnter"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/dollarEditText"
-            android:onClick="convert"
-            android:text="Enter" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="I'm thinking of a number between 1 and 20." />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Can you guess it?" />
+
+        <Button
+            android:id="@+id/buttonGuess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guessEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp"
+            android:onClick="guess"
+            android:text="Guess" />
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

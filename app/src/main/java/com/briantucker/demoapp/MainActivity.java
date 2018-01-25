@@ -7,24 +7,47 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
-    public void convert(View view){
+    int randomNumber;
 
-        EditText dollarEditText = (EditText) findViewById(R.id.dollarEditText);
+    public void makeToast(String string){
+        
 
-        Double dollarAmountDouble = Double.parseDouble(dollarEditText.getText().toString());
-
-        Double poundAmount = dollarAmountDouble * 0.7;
-
-        Toast.makeText(MainActivity.this, "£" + String.format("%.2f", poundAmount), Toast.LENGTH_SHORT).show();
-
-        Log.i("amount", dollarEditText.getText().toString());
     }
+
+    public void guess(View view) {
+
+
+        EditText guessNum = (EditText) findViewById(R.id.guessEditText);
+
+        int guessInt = Integer.parseInt(guessNum.getText().toString());
+
+        if(guessInt < randomNumber){
+            Toast.makeText(MainActivity.this, "Your number is lower!", Toast.LENGTH_SHORT).show();
+        }
+        else if(guessInt > randomNumber){
+            Toast.makeText(MainActivity.this, "Your number is higher!", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(MainActivity.this, "You got it! Try Again!", Toast.LENGTH_SHORT).show();
+
+            Random rand = new Random();
+
+            randomNumber = rand.nextInt(20) + 1;
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Random rand = new Random();
+
+        randomNumber = rand.nextInt(20) + 1;
     }
 }
